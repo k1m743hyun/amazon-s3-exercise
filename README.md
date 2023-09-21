@@ -1,1 +1,1 @@
-# aws-s3-exercise
+# amazon-s3-exercise
