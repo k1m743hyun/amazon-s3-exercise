@@ -18,11 +18,18 @@ resource "aws_s3_bucket_lifecycle_configuration" "this" {
 
   rule {
     id     = var.bucket
-    status = "Enabled"
+    
     transition {
       days          = 0
       storage_class = "INTELLIGENT_TIERING"
     }
+
+    noncurrent_version_transition {
+      noncurrent_days          = 0
+      storage_class = "INTELLIGENT_TIERING"
+    }
+
+    status = "Enabled"
   }
 }
 
